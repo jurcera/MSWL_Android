@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ExampleLayouts</string> 
+    <string name="title">Título Centrado</string>
+    <string name="username">Nombre del Usuario</string>
+    <string name="description">Descripción del estado del usuario que ocupa 2-3 líneas completas</string>    
+    <string name="but_profile">Ver Perfil</string>
+    <string name="but_info">Cargar Info</string>
+    <string name="but_update">Actualizar</string>
+    <string name="but_findme">Localízame!</string> 
+    <string name="long_text">Este es un ejemplo de texto largo encapsulado en una marquesina</string>
+</resources>
+
