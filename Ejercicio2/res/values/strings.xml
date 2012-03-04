@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Ejercicio2Activity!</string>
+    <string name="app_name">Ejercicio2</string>
+    
+    <string name="title">Título Ejercicio 2</string>
+    <string name="description">Description Ejercicio 2</string>
+
+</resources>
