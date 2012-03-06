@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Main!</string>
+    <string name="app_name">Control Whisnu</string>
+    <string name="lblDireccion">Dirección</string>
+    <string name="lblbtnconnect">Conectar</string>
+    <string name="lblbtndisconnect">Desconectar</string>
+    <string name="lbltxtlog">Log de actividad</string>
+    <string name="txtDefaultIp">172.31.0.24</string>
+
+</resources>
