@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Ejercicio3Activity!</string>
+    <string name="app_name">Parser GEORSS</string>
+    <string name="title">Titulo</string>
+    <string name="link">Enlace</string>
+    <string name="description">Descripcion</string>
+   	<string name="lbl_latitude">Latitud: </string>
+    <string name="latitude">Latitud</string>
+    <string name="lbl_longitude">Longitud: </string>
+    <string name="longitude">Longitud</string>
+    
+</resources>
