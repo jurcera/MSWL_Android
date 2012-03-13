@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000" >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cabecera"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="vertical" >
+
+	  	<TextView
+	        android:id="@+id/title"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+			android:lines="1"
+			android:textSize="25dip"
+	        android:textStyle="bold"
+	       	android:textColor="#FFFFFF"
+	        android:text="@string/title" />
+	        
+	    <TextView
+	        android:id="@+id/description"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	       	android:maxLines="2"
+	        android:textSize="12dip"
+	       	android:textColor="#FFFFFF" 
+	        android:text="@string/description" />
+	    
+	    <TextView
+	        android:id="@+id/link"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:maxLines="2"
+	        android:textSize="12dip"
+	        android:textColor="#FFFFFF" 
+	        android:text="@string/link" />
+
+	</LinearLayout>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/pie_lat"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@+id/cabecera"
+    	android:orientation="horizontal" >
+
+	   	<TextView
+	        android:id="@+id/id_latitude"
+	        android:layout_width="60dip"
+	        android:layout_height="wrap_content"
+	       	android:lines="1"
+	        android:textSize="12dip"
+	        android:textColor="#FFFFFF"
+	        android:text="@string/lbl_latitude" />
+	    
+	    <TextView
+	        android:id="@+id/latitude"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:lines="1"
+	        android:textSize="12dip"
+	        android:textColor="#FFFFFF"
+	        android:text="@string/latitude" />
+
+	</LinearLayout>
+	
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/pie_lon"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@+id/pie_lat"
+    	android:orientation="horizontal" >
+
+	   	<TextView
+	        android:id="@+id/id_longitude"
+	        android:layout_width="60dip"
+	        android:layout_height="wrap_content"
+	        android:lines="1"
+	        android:textSize="12dip"
+	        android:textColor="#FFFFFF"
+	        android:text="@string/lbl_longitude" />
+	        
+	    <TextView
+	        android:id="@+id/longitude"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:lines="1"
+	        android:textSize="12dip"
+	        android:textColor="#FFFFFF"
+	       	android:text="@string/longitude" />
+
+	</LinearLayout>
+ 
+    
+</RelativeLayout>
