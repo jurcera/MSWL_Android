@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ public class Ejercicio4Activity extends ListActivity {
 	Ejercicio4Activity mContext = null;
 	private MyAdapter mAdapter = null;
 	private static ArrayList<GeoRSSNode> mArray = new ArrayList<GeoRSSNode>();
+	private ILocationService ils = null;
 		
     /** Called when the activity is first created. */
     @Override
@@ -37,8 +39,8 @@ public class Ejercicio4Activity extends ListActivity {
               
         //Log.d("Ej3", "Antes Cargar Array");
         
-        
-        ILocationService ils = new ILocationService()
+         
+        ils = new ILocationService()
         {
 
 			@Override
@@ -56,8 +58,7 @@ public class Ejercicio4Activity extends ListActivity {
 				
 		        try {
 					mArray = mRssParser.parseGeoRssURL("http://earthquake.usgs.gov/earthquakes/catalogs/eqs7day-M5.xml");
-					// mArray = mRssParser.parseGeoRssURL("http://www.suso.com/eqs7day-M5.xml");
-								
+													
 				} catch (ParserConfigurationException e) {			
 					e.printStackTrace();
 				} catch (SAXException e) {
@@ -68,10 +69,10 @@ public class Ejercicio4Activity extends ListActivity {
 
 		              
 		        //Log.d("Ej3", "Despues Cargar Array");
+		 	   	
 		        
 		        mAdapter = new MyAdapter(mContext);
 		        
-		     
 				setListAdapter(mAdapter);
 			
 				
@@ -81,18 +82,54 @@ public class Ejercicio4Activity extends ListActivity {
         
         
         //Aqui habría que recoger el indice del array donde se ha metido el listener para poder desregistrarlo al salir de la activity   
-		
+		//No hace falta recogerlo le paso el ils en onStop y ya lo desregistra.
         LocService.regListener(ils); 
 		
 		
         
 		pd = ProgressDialog.show(mContext, "Please wait ...", "Waiting for location ...", true);
-		
+				
 		startService(new Intent(mContext,LocService.class));
         
         
     }
     
+    /* En esta versión de Android he visto que pulsando el botón de atrás va al onStop y 
+     * pulsando el botón de home va primero al onPause y después al onStop con lo que el
+     * desrregistro lo hago sólo en el onStop
+     * 
+      
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("Activity", "OnPause");
+        LocService.unregListener(ils);
+    }
+    */
+    
+    @Override 
+    protected void onResume() {
+	   super.onResume();
+	   mAdapter = null;
+	   //ils = null;
+	   //pd = null;
+    }
+    
+    @Override 
+    protected void onRestart() {
+	   super.onRestart(); 
+	   mArray.clear();
+	}
+    
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("Activity", "OnStop");
+        LocService.unregListener(ils);
+   
+    }
+    
+       
     
     public static class MyAdapter extends BaseAdapter {
 

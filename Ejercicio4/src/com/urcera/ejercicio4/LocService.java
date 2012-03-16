@@ -41,19 +41,21 @@ public class LocService extends Service {
 	{ 
 		mArrayList.add(iLocService);
 		// Habría que controlar que no se añade un listener dos veces
-		
+		Log.d("LocService", "REG Tamaño del ArrayList = " + mArrayList.size());
 		//¿Hay que devolver el indice del array donde se ha añadido el listener?
 	}
 	
-	// ********************************************************************************
+	// *********************************************************************************
 	// Para desregistrar un listener de la activity que se conecte al servicio
-	// ********************************************************************************
+	// *********************************************************************************
 	
 	public static void unregListener (ILocationService iLocService)
 	{ 
 		mArrayList.remove(iLocService);
+		
+		Log.d("LocService", "UNREG Tamaño del ArrayList = " + mArrayList.size());
 				
-		//Hay que devolver el indice del array donde se ha añadido el listener.
+		//Esto es para eliminar el listener del array de listeners.
 	}
 	
 	
@@ -65,7 +67,7 @@ public class LocService extends Service {
     // *************************************************************************************
     // Obtiene la posición del SERVICIO DE LOCALIZACION
     // *************************************************************************************	
-	
+	 
 	
     private void getLocation ()
     {    
@@ -81,7 +83,6 @@ public class LocService extends Service {
     											 5000, 15, mLocationListener); 
     	  	
     }
-    
     
     // *************************************************************************************
     // Listener que escucha el LocationManager y cuando se produce un cambio en la posición
